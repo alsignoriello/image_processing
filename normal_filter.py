@@ -27,6 +27,10 @@ if im.mode != "L":
 	im = im.convert("L")
 mat = np.array(im)
 mat = normalize(mat, n)
+mat = mat**(0.2)
+mat[mat > 0.1] = 255
+mat[mat <= 0.1] = 0
+print mat
 im = Image.fromarray(mat)
 im.save(outfile)
 
