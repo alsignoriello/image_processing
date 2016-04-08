@@ -23,8 +23,10 @@ outfile = sys.argv[3]
 
 
 im = Image.open(file)
+if im.mode != "L":
+	im = im.convert("L")
 mat = np.array(im)
 mat = normalize(mat, n)
 im = Image.fromarray(mat)
-mat.save(outfile)
+im.save(outfile)
 
