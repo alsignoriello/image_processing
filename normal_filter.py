@@ -34,3 +34,6 @@ print mat
 im = Image.fromarray(mat)
 im.save(outfile)
 
+
+
+

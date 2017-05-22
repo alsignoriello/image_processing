@@ -8,7 +8,7 @@ def meanFilter(mat,n):
 	ones = np.ones((n,n))
 	avg = ones / float(n**2)
 	mean = convolve2d(mat,avg,mode='same')
-	return mat
+	return mean
 
 
 
